@@ -1,7 +1,7 @@
-onNet('helloserver', () => {
-  const _source = (global as any).source;
+on("onResourceStart", (resource) => {
+  console.log(`[^6SERVER^7]: [^2${resource}^7] started!`);
+});
 
-  console.log(`Hello from ${_source}`);
-
-  emitNet('helloclient', _source, 'i got your message!');
+onNet("onClientFeedback", (feedback) => {
+  console.log(feedback);
 });
